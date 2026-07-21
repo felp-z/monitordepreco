@@ -23,6 +23,18 @@
           "url": "https://www.livelo.com.br/shopping/mesa-gamer-xt-racer-xtm1002-experience-series-preto-e-prata/produto/PRD3055589?skuId=SKU3766387"
         }
       ]
+    },
+    {
+      "id": "cadeira-ergonmica",
+      "name": "Cadeira Ergonômica",
+      "target_price": 500,
+      "active": true,
+      "links": [
+        {
+          "store": "kabum",
+          "url": "https://www.kabum.com.br/produto/780681/cadeira-office-elements-roi-ate-120kg-reclinavel-cilindro-classe-4-nylon-preto-71804"
+        }
+      ]
     }
   ],
   "settings": {
