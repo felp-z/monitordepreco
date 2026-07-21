@@ -13,7 +13,7 @@ const api = {
     async loadConfig() {
         const res = await this.fetchWithAuth(config.apiUrl('config.json'));
         const data = await res.json();
-        const content = decodeURIComponent(escape(atob(data.content)));
+        const content = decodeURIComponent(escape(atob(data.content.replace(/\s/g, ''))));
         return {
             sha: data.sha,
             data: JSON.parse(content)
@@ -36,7 +36,7 @@ const api = {
     async getRaw(file) {
         const res = await this.fetchWithAuth(config.apiUrl(file));
         const data = await res.json();
-        const content = decodeURIComponent(escape(atob(data.content)));
+        const content = decodeURIComponent(escape(atob(data.content.replace(/\s/g, ''))));
         return JSON.parse(content);
     }
 };
