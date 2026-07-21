@@ -35,18 +35,6 @@
           "url": "https://www.kabum.com.br/produto/780681/cadeira-office-elements-roi-ate-120kg-reclinavel-cilindro-classe-4-nylon-preto-71804"
         }
       ]
-    },
-    {
-      "id": "volante",
-      "name": "Volante",
-      "target_price": 200,
-      "active": true,
-      "links": [
-        {
-          "store": "mercadolivre",
-          "url": "https://produto.mercadolivre.com.br/MLB-5806474854-volante-esportivo-nova-tracker-comandos-s-funco-_JM"
-        }
-      ]
     }
   ],
   "settings": {
