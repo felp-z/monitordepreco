@@ -71,5 +71,31 @@
         }
       }
     ]
+  },
+  "mesa-gamer": {
+    "name": "Mesa Gamer",
+    "history": [
+      {
+        "timestamp": "2026-07-21T02:45:31.642992+00:00",
+        "prices": {
+          "kabum": {
+            "price": 349.99,
+            "available": true
+          },
+          "terabyte": {
+            "price": null,
+            "available": false
+          },
+          "americanas": {
+            "price": 379.99,
+            "available": true
+          },
+          "livelo": {
+            "price": 399.99,
+            "available": true
+          }
+        }
+      }
+    ]
   }
 }
