@@ -95,6 +95,41 @@
             "available": true
           }
         }
+      },
+      {
+        "timestamp": "2026-07-21T02:48:13.274322+00:00",
+        "prices": {
+          "kabum": {
+            "price": 349.99,
+            "available": true
+          },
+          "terabyte": {
+            "price": null,
+            "available": false
+          },
+          "americanas": {
+            "price": 379.99,
+            "available": true
+          },
+          "livelo": {
+            "price": 399.99,
+            "available": true
+          }
+        }
+      }
+    ]
+  },
+  "cadeira-ergonmica": {
+    "name": "Cadeira Ergonômica",
+    "history": [
+      {
+        "timestamp": "2026-07-21T02:48:13.274349+00:00",
+        "prices": {
+          "kabum": {
+            "price": 649.99,
+            "available": true
+          }
+        }
       }
     ]
   }
