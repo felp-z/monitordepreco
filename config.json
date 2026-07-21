@@ -1,26 +1,5 @@
 {
-  "products": [
-    {
-      "id": "mesa-gamer-xt-racer-xtm1002",
-      "name": "Mesa Gamer XT Racer XTM1002 Experience Series",
-      "target_price": 280,
-      "active": true,
-      "links": [
-        {
-          "store": "magazineluiza",
-          "url": "https://www.magazineluiza.com.br/mesa-gamer-xt-racer-xtm1002-experience-series-preto-e-prata/p/227130800/mo/mses/?seller_id=magazineluiza"
-        },
-        {
-          "store": "livelo",
-          "url": "https://www.livelo.com.br/shopping/mesa-gamer-xt-racer-xtm1002-experience-series-preto-e-prata/produto/PRD3055589?skuId=SKU3766387"
-        },
-        {
-          "store": "americanas",
-          "url": "https://www.americanas.com.br/mesa-gamer-xt-racer-xtm1002-experience-series-preto-e-prata-8330511/p"
-        }
-      ]
-    }
-  ],
+  "products": [],
   "settings": {
     "telegram_enabled": true,
     "cooldown_minutes": 120,
