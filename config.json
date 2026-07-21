@@ -1,5 +1,30 @@
 {
-  "products": [],
+  "products": [
+    {
+      "id": "mesa-gamer",
+      "name": "Mesa Gamer",
+      "target_price": 300,
+      "active": true,
+      "links": [
+        {
+          "store": "kabum",
+          "url": "https://www.kabum.com.br/produto/151914/mesa-gamer-husky-snow-preto-superficie-em-fibra-de-carbono-suporte-para-headset-e-copo-resistente-a-umidade-hdg100"
+        },
+        {
+          "store": "terabyte",
+          "url": "https://www.terabyteshop.com.br/produto/40441/mesa-gamer-ninja-koi-rgb-com-suporte-para-headset-e-copo-preta-sf-tb-ko12060bf-rgb"
+        },
+        {
+          "store": "americanas",
+          "url": "https://www.americanas.com.br/mesa-gamer-xt-racer-xtm1002-experience-series-preto-e-prata-8330511/p"
+        },
+        {
+          "store": "livelo",
+          "url": "https://www.livelo.com.br/shopping/mesa-gamer-xt-racer-xtm1002-experience-series-preto-e-prata/produto/PRD3055589?skuId=SKU3766387"
+        }
+      ]
+    }
+  ],
   "settings": {
     "telegram_enabled": true,
     "cooldown_minutes": 120,
