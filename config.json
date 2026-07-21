@@ -35,6 +35,22 @@
           "url": "https://www.kabum.com.br/produto/780681/cadeira-office-elements-roi-ate-120kg-reclinavel-cilindro-classe-4-nylon-preto-71804"
         }
       ]
+    },
+    {
+      "id": "barra-de-luz",
+      "name": "Barra de Luz",
+      "target_price": 100,
+      "active": true,
+      "links": [
+        {
+          "store": "mercadolivre",
+          "url": "https://www.mercadolivre.com.br/luminaria-led-regulavel-hrebos-para-monitor-usb-preta/p/MLB40338452"
+        },
+        {
+          "store": "mercadolivre",
+          "url": "https://www.mercadolivre.com.br/luminaria-barra-led-luz-monitor-notebook-computador-usb-mesa/up/MLBU787848302"
+        }
+      ]
     }
   ],
   "settings": {
