@@ -75,6 +75,18 @@
           "url": "https://www.mercadolivre.com.br/p/MLB23576926?"
         }
       ]
+    },
+    {
+      "id": "volante",
+      "name": "Volante",
+      "target_price": 200,
+      "active": true,
+      "links": [
+        {
+          "store": "mercadolivre",
+          "url": "https://produto.mercadolivre.com.br/MLB-5806474854-volante-esportivo-nova-tracker-comandos-s-funco-_JM"
+        }
+      ]
     }
   ],
   "settings": {
