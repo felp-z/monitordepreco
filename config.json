@@ -37,18 +37,6 @@
       ]
     },
     {
-      "id": "alarme-automotivo",
-      "name": "Alarme Automotivo",
-      "target_price": 300,
-      "active": true,
-      "links": [
-        {
-          "store": "mercadolivre",
-          "url": "https://www.mercadolivre.com.br/p/MLB23576926?"
-        }
-      ]
-    },
-    {
       "id": "volante",
       "name": "Volante",
       "target_price": 200,
