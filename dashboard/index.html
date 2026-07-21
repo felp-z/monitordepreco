@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Preços</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo">Monitor de Preços</h1>
+            <div class="header-actions">
+                <button class="btn btn-primary" onclick="app.openAddProductModal()">+ Adicionar Produto</button>
+                <button class="btn-icon" onclick="app.openSettingsModal()" title="Configurações">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a3 3 0 100-6 3 3 0 000 6z"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div id="setup-screen" class="hidden">
+            <div class="setup-card">
+                <h2>Bem-vindo ao Monitor de Preços</h2>
+                <p>Para começar, configure o acesso ao seu repositório do GitHub.</p>
+                <button class="btn btn-primary btn-large" onclick="app.openSettingsModal()">Configurar Agora</button>
+            </div>
+        </div>
+        
+        <div id="loading-state" class="grid-container hidden">
+            <!-- Skeleton items will be injected here -->
+        </div>
+
+        <div id="empty-state" class="hidden">
+            <p>Nenhum produto cadastrado.</p>
+        </div>
+
+        <div id="products-grid" class="grid-container">
+            <!-- Product cards will be injected here -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Última atualização: <span id="last-update">--</span></p>
+    </footer>
+
+    <!-- Add Product Modal -->
+    <div id="modal-add-product" class="modal-overlay hidden">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h2>Adicionar Produto</h2>
+                <button class="btn-close" onclick="app.closeModal('modal-add-product')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="form-add-product" onsubmit="event.preventDefault(); app.handleAddProduct();">
+                    <div class="form-group">
+                        <label for="product-name">Nome do Produto</label>
+                        <input type="text" id="product-name" required placeholder="Ex: Mesa Gamer...">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-target">Preço Alvo (R$)</label>
+                        <input type="number" step="0.01" id="product-target" required placeholder="0.00">
+                    </div>
+                    
+                    <div class="links-section">
+                        <div class="links-header">
+                            <h3>Links das Lojas</h3>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="app.addLinkField()">+ Adicionar Link</button>
+                        </div>
+                        <div id="links-container">
+                            <!-- Link inputs will be injected here -->
+                        </div>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-ghost" onclick="app.closeModal('modal-add-product')">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div id="modal-product-detail" class="modal-overlay hidden">
+        <div class="modal-card modal-large">
+            <div class="modal-header">
+                <h2 id="detail-title">Detalhes do Produto</h2>
+                <button class="btn-close" onclick="app.closeModal('modal-product-detail')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="detail-overview">
+                    <div class="detail-price-info">
+                        <p class="text-muted">Melhor Preço Atual</p>
+                        <h3 id="detail-best-price">R$ 0,00</h3>
+                    </div>
+                    <div class="chart-filters">
+                        <button class="btn-filter active" data-period="24h">24h</button>
+                        <button class="btn-filter" data-period="7d">7d</button>
+                        <button class="btn-filter" data-period="30d">30d</button>
+                        <button class="btn-filter" data-period="all">Tudo</button>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <canvas id="detail-chart"></canvas>
+                </div>
+                
+                <div class="stores-table-container">
+                    <table class="stores-table">
+                        <thead>
+                            <tr>
+                                <th>Loja</th>
+                                <th>Preço Atual</th>
+                                <th>Status</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="detail-stores-list">
+                            <!-- Store rows injected here -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+                    <button class="btn btn-secondary" id="btn-toggle-active" onclick="app.handleToggleActive()">Desativar Monitoramento</button>
+                    <button class="btn" style="background: rgba(239, 68, 68, 0.1); color: var(--danger); border: 1px solid rgba(239, 68, 68, 0.2);" onclick="app.handleDeleteProduct()">Excluir Produto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="modal-settings" class="modal-overlay hidden">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h2>Configurações</h2>
+                <button class="btn-close" onclick="app.closeModal('modal-settings')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="form-settings" onsubmit="event.preventDefault(); app.handleSaveSettings();">
+                    <div class="form-group">
+                        <label for="settings-repo">Repositório GitHub (ex: user/repo)</label>
+                        <input type="text" id="settings-repo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="settings-branch">Branch</label>
+                        <input type="text" id="settings-branch" required value="main">
+                    </div>
+                    <div class="form-group">
+                        <label for="settings-token">Personal Access Token (PAT)</label>
+                        <input type="password" id="settings-token" required>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-ghost" onclick="app.closeModal('modal-settings')">Cancelar</button>
+                        <button type="button" class="btn btn-secondary" onclick="app.testConnection()">Testar Conexão</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

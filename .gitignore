@@ -1,0 +1,17 @@
+__pycache__/
+.venv/
+venv/
+.env
+.env.local
+.firecrawl/
+.just-scrape/
+*.pyc
+dist/
+*.egg-info/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
