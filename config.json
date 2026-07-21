@@ -3,12 +3,45 @@
     {
       "id": "mesa-gamer-xt-racer-xtm1002",
       "name": "Mesa Gamer XT Racer XTM1002 Experience Series",
-      "target_price": 280.00,
+      "target_price": 280,
       "active": true,
       "links": [
-        { "store": "magazineluiza", "url": "https://www.magazineluiza.com.br/mesa-gamer-xt-racer-xtm1002-experience-series-preto-e-prata/p/227130800/mo/mses/?seller_id=magazineluiza" },
-        { "store": "livelo", "url": "https://www.livelo.com.br/shopping/mesa-gamer-xt-racer-xtm1002-experience-series-preto-e-prata/produto/PRD3055589?skuId=SKU3766387" },
-        { "store": "americanas", "url": "https://www.americanas.com.br/mesa-gamer-xt-racer-xtm1002-experience-series-preto-e-prata-8330511/p" }
+        {
+          "store": "magazineluiza",
+          "url": "https://www.magazineluiza.com.br/mesa-gamer-xt-racer-xtm1002-experience-series-preto-e-prata/p/227130800/mo/mses/?seller_id=magazineluiza"
+        },
+        {
+          "store": "livelo",
+          "url": "https://www.livelo.com.br/shopping/mesa-gamer-xt-racer-xtm1002-experience-series-preto-e-prata/produto/PRD3055589?skuId=SKU3766387"
+        },
+        {
+          "store": "americanas",
+          "url": "https://www.americanas.com.br/mesa-gamer-xt-racer-xtm1002-experience-series-preto-e-prata-8330511/p"
+        }
+      ]
+    },
+    {
+      "id": "mesa-gamer-xmt1002",
+      "name": "Mesa Gamer XMT1002",
+      "target_price": 300,
+      "active": true,
+      "links": [
+        {
+          "store": "livelo",
+          "url": "https://www.livelo.com.br/shopping/mesa-gamer-xt-racer-xtm1002-experience-series-preto-e-prata/produto/PRD3055589?skuId=SKU3766387"
+        },
+        {
+          "store": "americanas",
+          "url": "https://www.americanas.com.br/mesa-gamer-xt-racer-xtm1002-experience-series-preto-e-prata-8330511/p"
+        },
+        {
+          "store": "terabyte",
+          "url": "https://www.terabyteshop.com.br/produto/40441/mesa-gamer-ninja-koi-rgb-com-suporte-para-headset-e-copo-preta-sf-tb-ko12060bf-rgb"
+        },
+        {
+          "store": "kabum",
+          "url": "https://www.kabum.com.br/produto/151914/mesa-gamer-husky-snow-preto-superficie-em-fibra-de-carbono-suporte-para-headset-e-copo-resistente-a-umidade-hdg100"
+        }
       ]
     }
   ],
@@ -16,7 +49,10 @@
     "telegram_enabled": true,
     "cooldown_minutes": 120,
     "max_concurrent": 3,
-    "request_delay": [2, 5],
+    "request_delay": [
+      2,
+      5
+    ],
     "firecrawl_enabled": true
   }
 }
