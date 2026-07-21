@@ -34,12 +34,10 @@ const api = {
     },
 
     async getRaw(file) {
-        // Fetch raw file to avoid API rate limits where possible, but use auth if private
-        const url = config.rawUrl(file);
-        const headers = { 'Authorization': `token ${config.githubToken}` };
-        const res = await fetch(url, { headers });
-        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-        return await res.json();
+        const res = await this.fetchWithAuth(config.apiUrl(file));
+        const data = await res.json();
+        const content = decodeURIComponent(escape(atob(data.content)));
+        return JSON.parse(content);
     }
 };
 
