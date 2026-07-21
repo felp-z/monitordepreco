@@ -237,6 +237,38 @@ const app = {
         }
     },
 
+    async handleForceScrape() {
+        const btn = document.getElementById('btn-force-scrape');
+        const oldText = btn.textContent;
+        try {
+            btn.disabled = true;
+            btn.textContent = 'Solicitando...';
+            
+            await productsService.triggerMonitorWorkflow();
+            
+            this.showToast('Busca iniciada em nuvem! Aguarde 1-2 minutos.');
+            
+            let secs = 60;
+            const interval = setInterval(() => {
+                secs--;
+                if(secs <= 0) {
+                    clearInterval(interval);
+                    btn.disabled = false;
+                    btn.textContent = oldText;
+                    this.loadData();
+                } else {
+                    btn.textContent = `Rodando (${secs}s)`;
+                }
+            }, 1000);
+            
+        } catch (e) {
+            console.error(e);
+            this.showToast('Erro ao iniciar busca. Verifique permissões do PAT.', 'error');
+            btn.disabled = false;
+            btn.textContent = oldText;
+        }
+    },
+
     openAddProductModal() {
         document.getElementById('form-add-product').reset();
         document.getElementById('links-container').innerHTML = '';

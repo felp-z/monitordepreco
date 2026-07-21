@@ -99,5 +99,15 @@ const productsService = {
         const { sha, data } = await api.loadConfig();
         data.products = data.products.filter(p => p.id !== productId);
         await api.saveConfig(data, sha);
+    },
+
+    async triggerMonitorWorkflow() {
+        const url = `https://api.github.com/repos/${config.githubRepo}/actions/workflows/monitor.yml/dispatches`;
+        await api.fetchWithAuth(url, {
+            method: 'POST',
+            body: JSON.stringify({
+                ref: config.githubBranch
+            })
+        });
     }
 };
