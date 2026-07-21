@@ -37,18 +37,6 @@
       ]
     },
     {
-      "id": "kit-retrovisor-eltrico",
-      "name": "Kit Retrovisor Elétrico",
-      "target_price": 300,
-      "active": true,
-      "links": [
-        {
-          "store": "mercadolivre",
-          "url": "https://www.mercadolivre.com.br/kit-retrovisor-eletrico-tragial-gm-chevrolet-celta-g1-ate-05/up/MLBU3907368610"
-        }
-      ]
-    },
-    {
       "id": "alarme-automotivo",
       "name": "Alarme Automotivo",
       "target_price": 300,
