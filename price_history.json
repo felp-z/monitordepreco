@@ -116,6 +116,27 @@
             "available": true
           }
         }
+      },
+      {
+        "timestamp": "2026-07-21T03:00:07.911443+00:00",
+        "prices": {
+          "kabum": {
+            "price": 349.99,
+            "available": true
+          },
+          "terabyte": {
+            "price": null,
+            "available": false
+          },
+          "americanas": {
+            "price": 379.99,
+            "available": true
+          },
+          "livelo": {
+            "price": 399.99,
+            "available": true
+          }
+        }
       }
     ]
   },
@@ -128,6 +149,71 @@
           "kabum": {
             "price": 649.99,
             "available": true
+          }
+        }
+      },
+      {
+        "timestamp": "2026-07-21T03:00:07.911469+00:00",
+        "prices": {
+          "kabum": {
+            "price": 649.99,
+            "available": true
+          }
+        }
+      }
+    ]
+  },
+  "barra-de-luz": {
+    "name": "Barra de Luz",
+    "history": [
+      {
+        "timestamp": "2026-07-21T03:00:07.911475+00:00",
+        "prices": {
+          "mercadolivre": {
+            "price": null,
+            "available": false
+          }
+        }
+      }
+    ]
+  },
+  "kit-retrovisor-eltrico": {
+    "name": "Kit Retrovisor Elétrico",
+    "history": [
+      {
+        "timestamp": "2026-07-21T03:00:07.911480+00:00",
+        "prices": {
+          "mercadolivre": {
+            "price": null,
+            "available": false
+          }
+        }
+      }
+    ]
+  },
+  "alarme-automotivo": {
+    "name": "Alarme Automotivo",
+    "history": [
+      {
+        "timestamp": "2026-07-21T03:00:07.911483+00:00",
+        "prices": {
+          "mercadolivre": {
+            "price": null,
+            "available": false
+          }
+        }
+      }
+    ]
+  },
+  "volante": {
+    "name": "Volante",
+    "history": [
+      {
+        "timestamp": "2026-07-21T03:00:07.911486+00:00",
+        "prices": {
+          "mercadolivre": {
+            "price": null,
+            "available": false
           }
         }
       }
