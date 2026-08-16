@@ -8012,6 +8012,27 @@
             "available": true
           }
         }
+      },
+      {
+        "timestamp": "2026-08-16T04:09:05.636037+00:00",
+        "prices": {
+          "kabum": {
+            "price": 349.99,
+            "available": true
+          },
+          "terabyte": {
+            "price": null,
+            "available": false
+          },
+          "americanas": {
+            "price": 379.99,
+            "available": true
+          },
+          "livelo": {
+            "price": 399.99,
+            "available": true
+          }
+        }
       }
     ]
   },
@@ -11404,6 +11425,15 @@
       },
       {
         "timestamp": "2026-08-16T03:04:08.596829+00:00",
+        "prices": {
+          "kabum": {
+            "price": 849.99,
+            "available": true
+          }
+        }
+      },
+      {
+        "timestamp": "2026-08-16T04:09:05.636067+00:00",
         "prices": {
           "kabum": {
             "price": 849.99,
